@@ -29,6 +29,7 @@ public class Main {
         Actions.add(new FindContactsMenuAction(contactService,contactView));
         Actions.add(new RemoveContactMenuAction(contactService,contactView));
         Actions.add(new ShowInCapitalMenuAction(contactService,contactView));
+        Actions.add(new GetNamesMenuAction(contactService,contactView));
         Actions.add(new ExitMenuAction());
         Menu menu=new Menu(Actions,sc);
         menu.run();

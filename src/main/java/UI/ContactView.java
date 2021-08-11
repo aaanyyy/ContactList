@@ -52,4 +52,12 @@ public class ContactView {
         sc.nextLine();
         return result;
     }
+    public void showAllNames(String str)
+    {
+        System.out.println("-----------------------Names-----------------------------");
+        System.out.println(str);
+        System.out.println("------------------------------------------------------------");
+
+    }
+
 }

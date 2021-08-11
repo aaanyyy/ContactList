@@ -21,6 +21,6 @@ public class FindContactsMenuAction implements MenuAction{
 
     @Override
     public String getName() {
-        return "Find a contact by a name";
+        return "Find a contact by a name (filter example)";
     }
 }

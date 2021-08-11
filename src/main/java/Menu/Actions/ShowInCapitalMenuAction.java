@@ -23,7 +23,7 @@ public class ShowInCapitalMenuAction implements MenuAction{
 
         @Override
         public String getName() {
-            return "Make names in capital letters";
+            return "Make names in capital letters (map example)";
         }
     }
 

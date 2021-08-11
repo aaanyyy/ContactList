@@ -79,4 +79,12 @@ public class InMemoryContactService implements ContactService{
         return result;
     }
 
+    @Override
+    public String getAllNames() {
+        return
+        ListUtils.reduce(contacts,"",(init,contact)->init+contact.getName()+"\n");
+
+
+    }
+
 }

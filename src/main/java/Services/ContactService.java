@@ -10,6 +10,7 @@ public interface ContactService {
     void add (Contact contact);
     List<Contact> search(String nameStartsWith);
     List<Contact> capitalizeName();
+    String getAllNames();
 
 
 }
