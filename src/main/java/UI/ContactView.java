@@ -1,6 +1,7 @@
 package UI;
 
 import Models.Contact;
+import Util.ListUtils;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -27,11 +28,14 @@ public class ContactView {
     public void showContacts(List<Contact> contacts)
     {
         System.out.println("-----------------------Contacts-----------------------------");
-        if(contacts.size()>0) {
+
+        if(contacts.size()>0)
+            ListUtils.forEach(contacts,elem->showContact(elem));
+        /*{
             for (Contact contact : contacts) {
                 showContact(contact);
             }
-        }
+        }*/
         else
             System.out.println("No contacts");
         System.out.println("------------------------------------------------------------");

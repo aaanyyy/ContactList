@@ -9,6 +9,7 @@ public interface ContactService {
     boolean remove (int index);
     void add (Contact contact);
     List<Contact> search(String nameStartsWith);
+    List<Contact> capitalizeName();
 
 
 }

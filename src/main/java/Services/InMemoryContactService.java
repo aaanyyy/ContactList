@@ -1,10 +1,11 @@
 package Services;
 
 import Models.Contact;
+import Util.ListUtils;
 import lombok.RequiredArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @RequiredArgsConstructor
 public class InMemoryContactService implements ContactService{
@@ -47,6 +48,7 @@ public class InMemoryContactService implements ContactService{
     }
     private Contact get(Integer id)
     {
+
         for (Contact contact : contacts) {
             if(contact.getId().equals(id))
                 return contact;
@@ -56,11 +58,24 @@ public class InMemoryContactService implements ContactService{
 
     @Override
     public List<Contact> search(String nameStartsWith) {
-        List<Contact> result=new ArrayList<Contact>();
-        for (Contact contact : contacts) {
-            if(contact.getName().startsWith(nameStartsWith))
-                result.add(contact);
-        }
+       // List<Contact> result=new ArrayList<Contact>();
+        List<Contact> result=ListUtils.filter(contacts,elem-> elem.getName().startsWith(nameStartsWith));
+
+        // for (Contact contact : contacts) {
+        //     if(contact.getName().startsWith(nameStartsWith))
+        //         result.add(contact);
+        // }
+        return result;
+    }
+
+    @Override
+    public List<Contact> capitalizeName() {
+        List <Contact> result=ListUtils.map(contacts,(elem)->{
+            Contact CapitalizedContact=elem;
+            //new Contact().setName(elem.getName()).setPhone(elem.getPhone());
+            CapitalizedContact.setName(CapitalizedContact.getName().toUpperCase(Locale.ROOT));
+            return CapitalizedContact;
+        });
         return result;
     }
 
